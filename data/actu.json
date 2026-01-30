@@ -1,0 +1,26 @@
+{
+  "success": true,
+  "actualites": [
+    {
+      "id": "00",
+      "titre": "Ouverture des inscriptions pour l'année 2026",
+      "date": "2026-01-30",
+      "description": "Les candidats peuvent désormais s'inscrire en ligne pour l'année 2026 aux différents instituts ISPITS.",
+      "lien": "https://ispits.sante.gov.ma/pages/DetailActualites_tous.aspx?IDActu=00"
+    },
+    {
+      "id": "01",
+      "titre": "Résultats des examens du semestre 1",
+      "date": "2026-01-25",
+      "description": "Les résultats du semestre 1 sont disponibles pour consultation en ligne.",
+      "lien": "https://ispits.sante.gov.ma/pages/DetailActualites_tous.aspx?IDActu=01"
+    },
+    {
+      "id": "02",
+      "titre": "Conférence sur la santé publique",
+      "date": "2026-01-20",
+      "description": "Une conférence sur la santé publique aura lieu le 5 février 2026 à Rabat.",
+      "lien": "https://ispits.sante.gov.ma/pages/DetailActualites_tous.aspx?IDActu=02"
+    }
+  ]
+}
