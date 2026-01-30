@@ -9,38 +9,47 @@ export default async function handler(req, res) {
       headers: {
         "User-Agent":
           "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
-        Accept: "text/html",
+        "Accept": "text/html",
         "Accept-Language": "fr-FR,fr;q=0.9"
       }
     });
 
+    if (!response.ok) {
+      throw new Error("Failed to fetch page");
+    }
+
     const html = await response.text();
     const $ = cheerio.load(html);
 
+    /* ===== TITLE ===== */
+    const title =
+      $("h1").first().text().trim() ||
+      $("title").text().trim();
 
-    const title = $("h1").first().text().trim();
+    /* ===== MAIN CONTENT ===== */
+    const content = $("#ctl00_PlaceHolderMain")
+      .text()
+      .replace(/\s+/g, " ")
+      .trim();
 
-    // Main content
-    const content = $("#ctl00_PlaceHolderMain").text().trim();
-
-    // Images
+    /* ===== IMAGES ===== */
     const images = [];
-    $("img").each((_, img) => {
-      const src = $(img).attr("src");
-      if (src && src.includes("Actualites")) {
-        images.push(src.startsWith("http") ? src : `https://ispits.sante.gov.ma${src}`);
+    $("#ctl00_PlaceHolderMain img").each((_, img) => {
+      let src = $(img).attr("src");
+      if (src) {
+        if (!src.startsWith("http")) {
+          src = `https://ispits.sante.gov.ma${src}`;
+        }
+        images.push(src);
       }
     });
-
 
     res.status(200).json({
       success: true,
       title,
-      content: content.slice(0, 2000), 
+      content,
       images
     });
-
-
 
   } catch (error) {
     res.status(500).json({
