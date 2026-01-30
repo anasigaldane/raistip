@@ -1,16 +1,14 @@
-import * as cheerio from 'cheerio';
+import * as cheerio from "cheerio";
 
-/**
- * Serverless function to fetch the news page and extract title, content, and images
- */
 export default async function handler(req, res) {
   try {
     const url = "https://ispits.sante.gov.ma/pages/DetailActualites_tous.aspx?IDActu=00";
 
+    // Fetch page with proper headers
     const response = await fetch(url, {
       headers: {
         "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
-        "Accept": "text/html",
+        Accept: "text/html",
         "Accept-Language": "fr-FR,fr;q=0.9"
       }
     });
@@ -25,13 +23,13 @@ export default async function handler(req, res) {
     const html = await response.text();
     const $ = cheerio.load(html);
 
-    // استخراج العنوان
+    // Title
     const title = $("h1").first().text().trim() || "No title found";
 
-    // استخراج النص الرئيسي
+    // Main content
     const content = $("#ctl00_PlaceHolderMain").text().trim() || "No content found";
 
-    // استخراج الصور
+    // Images
     const images = [];
     $("img").each((_, img) => {
       const src = $(img).attr("src");
@@ -40,7 +38,7 @@ export default async function handler(req, res) {
       }
     });
 
-    // إعادة JSON منظم
+    // Return JSON
     res.status(200).json({
       success: true,
       title,
@@ -49,7 +47,7 @@ export default async function handler(req, res) {
     });
 
   } catch (error) {
-    console.error("Error fetching actu:", error);
+    console.error("Error:", error);
     res.status(500).json({
       success: false,
       error: error.message

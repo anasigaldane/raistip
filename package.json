@@ -1,12 +1,10 @@
 {
-  "name": "raistip",
+  "name": "my-vercel-api",
   "version": "1.0.0",
   "type": "module",
-  "scripts": {
-    "dev": "vercel dev"
-  },
   "dependencies": {
-    "cheerio": "^1.0.0-rc.12"
+    "cheerio": "^1.0.0-rc.12",
+    "node-fetch": "^3.3.2"
   },
   "engines": {
     "node": ">=18"
