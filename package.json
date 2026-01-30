@@ -1,9 +1,14 @@
 {
+  "name": "raistip",
+  "version": "1.0.0",
   "type": "module",
-  "engines": {
-    "node": ">=18"
+  "scripts": {
+    "dev": "vercel dev"
   },
   "dependencies": {
     "cheerio": "^1.0.0-rc.12"
+  },
+  "engines": {
+    "node": ">=18"
   }
 }
