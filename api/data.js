@@ -18,6 +18,62 @@ export default function handler(req, res) {
         titre: "Proclamation des résultats du test d'aptitude du concours d'accès aux ISPITS, cycle de la licence, session septembre 2025",
         description: "Résultats du test d'aptitude pour le concours d'accès aux ISPITS, cycle licence, session septembre 2025.",
         lien: "https://ispits.sante.gov.ma/Pages/DetailActualites.aspx?IDActu=159"
+      },
+      {
+        id: "155",
+        date: "2025-10-06",
+        titre: "Planning du déroulement du test d'aptitude des candidats admis à l'épreuve écrite du concours d'accès aux ISPITS, cycle licence, session septembre 2025",
+        description: "Calendrier détaillé du déroulement du test d'aptitude pour les candidats admis.",
+        lien: "https://ispits.sante.gov.ma/Pages/DetailActualites.aspx?IDActu=158"
+      },
+      {
+        id: "154",
+        date: "2025-10-04",
+        titre: "Proclamation des résultats de l'épreuve écrite du concours d'accès aux ISPITS, cycle de la licence, session 2025",
+        description: "Résultats de l'épreuve écrite pour les candidats du cycle licence, session 2025.",
+        lien: "https://ispits.sante.gov.ma/Pages/DetailActualites.aspx?IDActu=157"
+      },
+      {
+        id: "153",
+        date: "2025-09-18",
+        titre: "Listes définitives des candidats présélectionnés par ville d'examen pour passer l'épreuve écrite du concours d'accès aux ISPITS, cycle de la licence, session septembre 2025",
+        description: "Les listes définitives des candidats présélectionnés par ville d'examen.",
+        lien: "https://ispits.sante.gov.ma/Pages/DetailActualites.aspx?IDActu=156"
+      },
+      {
+        id: "152",
+        date: "2025-09-02",
+        titre: "Listes des candidats présélectionnés par ville d'examen pour passer l'épreuve écrite du concours d'accès aux ISPITS, cycle de la licence, session septembre 2025",
+        description: "Listes initiales des candidats présélectionnés par ville d'examen.",
+        lien: "https://ispits.sante.gov.ma/Pages/DetailActualites.aspx?IDActu=155"
+      },
+      {
+        id: "151",
+        date: "2025-07-22",
+        titre: "مباراة ولوج المعاهد العليا للمهن التمريضية وتقنيات الصحة 2025/2026",
+        description: "AVIS officiel concernant le concours d'accès aux ISPITS pour l'année 2025/2026.",
+        lien: "https://ispits.sante.gov.ma/Pages/DetailActualites.aspx?IDActu=154"
+      },
+      {
+        id: "150",
+        date: "2025-02-06",
+        titre: "Avis aux candidats des listes d'attente du concours d'accès aux ISPITS, cycle du master, session de novembre 2024",
+        description: "Informations pour les candidats en liste d'attente du cycle master, session novembre 2024.",
+        lien: "https://ispits.sante.gov.ma/Pages/DetailActualites.aspx?IDActu=153"
+      },
+      {
+        id: "149",
+        date: "2025-01-17",
+        titre: "Résultats définitifs du concours d'accès aux ISPITS, cycle du master, session du 17 novembre 2024",
+        description: "Résultats finaux du concours pour le cycle master, session du 17 novembre 2024.",
+        lien: "https://ispits.sante.gov.ma/Pages/DetailActualites.aspx?IDActu=152"
+      },
+      {
+        id: "148",
+        date: "2024-12-19",
+        titre: "Répartition des candidats convoqués pour passer l'épreuve orale du concours d'accès aux ISPITS, cycle du master, session de 17 novembre 2024",
+        description: "Détails sur la répartition des candidats pour l'épreuve orale du concours master.",
+        lien: "https://ispits.sante.gov.ma/Pages/DetailActualites.aspx?IDActu=151"
       }
     ]
   };

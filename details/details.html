@@ -135,6 +135,7 @@ body{
     text-decoration:none;
     color:#003366;
     transition:0.3s;
+    width: 300px;
 }
 
 .title a:hover{
@@ -279,8 +280,8 @@ body{
             
 
             <div class="title">
-                <a href="#" id="title">
-                    Avis aux candidats des listes d'attente : Tableau des places vacantes, par ISPITS et par options, session septembre 2025
+                <a id="title">
+                    Proclamation des résultats du test d'aptitude du concours d'accès aux ISPITS, cycle de la licence, session septembre 2025
                 </a>
             </div>
 
@@ -306,6 +307,7 @@ body{
 <script>
 const params = new URLSearchParams(window.location.search);
 const id = params.get("iddata");
+const actualite = data.actualites.find(item => item.id === String(id));
 
 fetch(`/api/data?id=${id}`)
   .then(res => res.json())
