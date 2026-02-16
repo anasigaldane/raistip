@@ -284,7 +284,7 @@ body{
                 </a>
             </div>
 
-            <div class="date">
+            <div class="date" id="date">
                 14/11/2025
             </div>
         </div>
@@ -295,7 +295,7 @@ body{
 
         <div class="download-section">
             <h3>Téléchargement :</h3>
-            <a id="date" href="https://ispits.sante.gov.ma/Documents/Concoursdacces-licence-septembre2025/orale/RF/Avis%20LA%20et%20places%20vacantes.PDF" class="btn" target="_blank">
+            <a  href="https://ispits.sante.gov.ma/Documents/Concoursdacces-licence-septembre2025/orale/RF/Avis%20LA%20et%20places%20vacantes.PDF" class="btn" target="_blank">
                 Télécharger l'avis (PDF)
             </a>
         </div>
@@ -304,21 +304,22 @@ body{
 </div>
 
 <script>
-const params = new URLSearchParams(window.location.search);
-const id = params.get("iddata");
+fetch(`/api/data?id=${id}`)
+  .then(res => res.json())
+  .then(response => {
 
-if(id){
-  fetch(`/api/data?id=${id}`)
-    .then(res => res.json())
-    .then(data => {
-      document.getElementById("title").innerText = data.title;
-      document.getElementById("description").innerText = data.description;
-      document.getElementById("date").innerText = data.date;
-    })
-    .catch(err => {
-      console.error("Erreur:", err);
-    });
-}
+    if(!response.success){
+      document.getElementById("title").innerText = "Introuvable";
+      return;
+    }
+
+    const data = response.data;
+
+    document.getElementById("title").innerText = data.titre;
+    document.getElementById("description").innerText = data.description;
+    document.getElementById("date").innerText = data.date;
+
+  });
 </script>
 </body>
 </html>
