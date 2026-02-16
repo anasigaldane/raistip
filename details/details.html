@@ -307,7 +307,7 @@ body{
 <script>
 const params = new URLSearchParams(window.location.search);
 const id = params.get("iddata");
-const actualite = data.actualites.find(item => item.id === String(id));
+
 
 fetch(`/api/data?id=${id}`)
   .then(res => res.json())
