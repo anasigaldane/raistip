@@ -10,7 +10,7 @@ export default function handler(req, res) {
         date: "2025-11-14",
         titre: "Avis aux candidats des listes d'attente : Tableau des places vacantes, par ISPITS et par options, session septembre 2025",
         description: "Tableau des places vacantes pour les candidats des listes d'attente, classé par ISPITS et par options.",
-        lien: "https://ispits.sante.gov.ma/Pages/DetailActualites.aspx?IDActu=160"
+        lien: "https://ispits.sante.gov.ma/Documents/Concoursdacces-licence-septembre2025/orale/RF/Avis%20LA%20et%20places%20vacantes.PDF"
       },
       {
         id: "156",
