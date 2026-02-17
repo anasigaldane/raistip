@@ -255,6 +255,77 @@ body{
         padding:0 15px;
     }
 }
+
+.container{
+    max-width:1200px;
+    margin:auto;
+}
+
+h1{
+    text-align:center;
+    margin-bottom:40px;
+    color:#003366;
+}
+
+/* GRID */
+.centres-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:20px;
+}
+
+/* CARD */
+.centre-card{
+    background:#fff;
+    padding:25px;
+    border-radius:15px;
+    text-align:center;
+    box-shadow:0 10px 25px rgba(0,0,0,0.08);
+    transition:0.3s ease;
+    position:relative;
+    overflow:hidden;
+}
+
+.centre-card:hover{
+    transform:translateY(-6px);
+    box-shadow:0 15px 35px rgba(0,0,0,0.15);
+}
+
+.centre-card::before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:5px;
+    background:#0077cc;
+}
+
+.centre-card h3{
+    color:#003366;
+    margin-bottom:15px;
+}
+
+.centre-card a{
+    display:inline-block;
+    padding:8px 15px;
+    background:#0077cc;
+    color:#fff;
+    text-decoration:none;
+    border-radius:8px;
+    font-size:14px;
+    transition:0.3s;
+}
+
+.centre-card a:hover{
+    background:#005fa3;
+}
+
+@media(max-width:600px){
+    h1{
+        font-size:20px;
+    }
+ }
 </style>
 </head>
 
@@ -293,42 +364,88 @@ body{
         <div class="resume" id="description">
             -
         </div>
-
+       <!-- download -->
         <div class="download-section">
             <h3>Téléchargement :</h3>
             <a id="downloadLink" href="#" class="btn" target="_blank">
                 Télécharger l'avis (PDF)
             </a>
         </div>
-
+        <!-- tableau -->
+        <div class="centres-grid" id="centresContainer" style="display:none;">
+        <!-- Dynamic content here -->
+       </div>
     </div>
 </div>
-
 <script>
 const params = new URLSearchParams(window.location.search);
 const id = params.get("iddata");
-
 
 fetch(`/api/data?id=${id}`)
   .then(res => res.json())
   .then(response => {
 
-    if(!response.success){
+    if (!response.success) {
       document.getElementById("title").innerText = "Introuvable";
       return;
     }
 
     const data = response.data;
 
-    document.getElementById("title").innerText = data.titre;
-    document.getElementById("description").innerText = data.description;
-    document.getElementById("date").innerText = data.date;
-   
-     // update download link
-    const link = document.getElementById("downloadLink");
-    link.href = data.lien; // dynamic link from API
-    link.innerText = "Télécharger l'avis (PDF)";
+    document.getElementById("title").innerText = data.titre || "-";
+    document.getElementById("description").innerText = data.description || "-";
+    document.getElementById("date").innerText = data.date || "--/--/----";
 
+    const link = document.getElementById("downloadLink");
+    const tableContainer = document.getElementById("centresContainer");
+
+    // تنظيف الجدول
+    tableContainer.innerHTML = "";
+
+    // تحويل القيمة إلى Boolean آمن
+    const isTable = String(data.tabl) === "true" || data.tabl === true;
+
+    // 🔵 إذا كان tabl = false → عرض زر التحميل فقط
+    if (!isTable) {
+
+      link.style.display = "inline-block";
+      tableContainer.style.display = "none";
+
+      if (data.lien) {
+        link.href = data.lien;
+        link.innerText = "Télécharger l'avis (PDF)";
+      }
+
+      return;
+    }
+
+    // 🟢 إذا كان tabl = true → إظهار الجدول وإخفاء زر التحميل
+    link.style.display = "none";
+    tableContainer.style.display = "grid";
+
+    // نفترض أن API يرجع array باسم tableData
+    if (Array.isArray(data.tableData)) {
+
+      data.tableData.forEach(item => {
+
+        const card = document.createElement("div");
+        card.className = "centre-card";
+
+        card.innerHTML = `
+          <h3>Centre d'examen ${item.name}</h3>
+          <a href="${item.link}" target="_blank">
+            Télécharger PDF
+          </a>
+        `;
+
+        tableContainer.appendChild(card);
+      });
+
+    }
+
+  })
+  .catch(error => {
+    console.error("Erreur API:", error);
   });
 </script>
 </body>
