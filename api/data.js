@@ -21,8 +21,31 @@ export default function handler(req, res) {
         lien: "https://ispits.sante.gov.ma/Pages/DetailActualites.aspx?IDActu=159",
         tabl: true,
         tableData: [
-          { "name": "Agadir", "link": "/docs/agadir.pdf" },
-          { "name": "Fès", "link": "/docs/fes.pdf" }
+          { "name": "AGADIR", "link": "docs/AGADIR TA.pdf" },
+          { "name": "ALHOCEIMA", "link": "/docs/ALHOCEIMA TA.pdf" },
+          { "name": "B ENI MELLAL", "link": "/docs/B ENI MELLAL TA.pdf" },
+          { "name": "CASABLANCA", "link": "/docs/CASABLANCA TA.pdf" },
+          { "name": "DAKHLA", "link": "/docs/DAKHLA TA.pdf" },
+          { "name": "ERRACHIDIA", "link": "/docs/ERRACHIDIA TA.pdf" },
+          { "name": "​ESSAOUIRA", "link": "/docs/ESSAOUIRA TA.pdf" },
+          { "name": "​FES", "link": "/docs/FES TA.pdf" },
+          { "name": "GUELMIM", "link": "/docs/GUELMIM TA.pdf" },
+          { "name": "KENITRA", "link": "/docs/KENITRA TA.pdf" },
+          { "name": "KHENIFRA", "link": "/docs/KHENIFRA TA.pdf" },
+          { "name": "LAAYOUNE", "link": "/docs/LAAYOUNE TA.pdf" },
+          { "name": "MARRAKECH", "link": "/docs/MARRAKECH TA.pdf" },
+          { "name": "MEKNES", "link": "/docs/MEKNES TA.pdf" },
+          { "name": "NADOR", "link": "/docs/NADOR TA.pdf" },
+          { "name": "OUJDA", "link": "/docs/OUJDA TA.pdf" },
+          { "name": "RABAT", "link": "/docs/RABAT TA.pdf" },
+          { "name": "SAFI", "link": "/docs/SAFI TA.pdf" },
+          { "name": "SETTAT", "link": "/docs/SETTAT TA.pdf" },
+          { "name": "TANGER", "link": "/docs/TANGER TA.pdf" },
+          { "name": "TAZA", "link": "/docs/TAZA TA.pdf" },
+          { "name": "TETOUAN", "link": "/docs/TETOUAN TA.pdf" },
+          { "name": "TIZNIT​", "link": "/docs/TIZNIT TA.pdf" },
+          { "name": "OUARZAZATE", "link": "/docs/OUARZAZATE TA.pdf" },
+          { "name": "​ZAG​ORA", "link": "/docs/ZAGORA TA.pdf" }
         ]
       },
       {
