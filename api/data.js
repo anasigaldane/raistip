@@ -21,7 +21,7 @@ export default function handler(req, res) {
         lien: "https://ispits.sante.gov.ma/Pages/DetailActualites.aspx?IDActu=159",
         tabl: true,
         tableData: [
-          { "name": "AGADIR", "link": "docs/AGADIR TA.pdf" },
+          { "name": "AGADIR", "link": "/docs/AGADIR TA.pdf" },
           { "name": "ALHOCEIMA", "link": "/docs/ALHOCEIMA TA.pdf" },
           { "name": "B ENI MELLAL", "link": "/docs/B ENI MELLAL TA.pdf" },
           { "name": "CASABLANCA", "link": "/docs/CASABLANCA TA.pdf" },
