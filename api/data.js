@@ -23,7 +23,7 @@ export default function handler(req, res) {
         tableData: [
           { "name": "AGADIR", "link": "/docs/AGADIR TA.pdf" },
           { "name": "ALHOCEIMA", "link": "/docs/ALHOCEIMA TA.pdf" },
-          { "name": "B ENI MELLAL", "link": "/docs/B ENI MELLAL TA.pdf" },
+          { "name": "B ENI MELLAL", "link": "/docs/BENIMELLAL TA.pdf" },
           { "name": "CASABLANCA", "link": "/docs/CASABLANCA TA.pdf" },
           { "name": "DAKHLA", "link": "/docs/DAKHLA TA.pdf" },
           { "name": "ERRACHIDIA", "link": "/docs/ERRACHIDIA TA.pdf" },
