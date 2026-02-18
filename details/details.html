@@ -439,8 +439,11 @@ h1{
     </div>
 </div>
 <script>
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", function () {
 
+  // ===============================
+  // Elements
+  // ===============================
   const params = new URLSearchParams(window.location.search);
   const id = params.get("iddata");
 
@@ -449,30 +452,36 @@ document.addEventListener("DOMContentLoaded", () => {
   const dateEl = document.getElementById("date");
   const linkEl = document.getElementById("downloadLink");
   const container = document.getElementById("centresContainer");
-
-  // Optional elements (if you added them)
   const loadingEl = document.getElementById("loading");
   const emptyEl = document.getElementById("emptyState");
 
-  // Safety check
+  // ===============================
+  // Initial Check
+  // ===============================
   if (!id) {
     titleEl.textContent = "Introuvable";
     return;
   }
 
+  // ===============================
   // Reset UI
+  // ===============================
   container.innerHTML = "";
   container.style.display = "none";
   linkEl.style.display = "none";
+
   if (emptyEl) emptyEl.style.display = "none";
   if (loadingEl) loadingEl.style.display = "block";
 
+  // ===============================
+  // Fetch Data
+  // ===============================
   fetch(`/api/data?id=${encodeURIComponent(id)}`)
-    .then(res => {
+    .then(function (res) {
       if (!res.ok) throw new Error("Network error");
       return res.json();
     })
-    .then(response => {
+    .then(function (response) {
 
       if (loadingEl) loadingEl.style.display = "none";
 
@@ -484,16 +493,19 @@ document.addEventListener("DOMContentLoaded", () => {
 
       const data = response.data;
 
-      // Basic info
+      // ===============================
+      // Fill Basic Info
+      // ===============================
       titleEl.textContent = data.titre || "-";
       descEl.textContent = data.description || "-";
       dateEl.textContent = data.date || "--/--/----";
 
-      // Safe Boolean conversion
-      const isTable = data.tabl === true || String(data.tabl).toLowerCase() === "true";
+      const isTable =
+        data.tabl === true ||
+        String(data.tabl).toLowerCase() === "true";
 
       // ===============================
-      // CASE 1: Show Download Button
+      // CASE 1 → Show Download Button
       // ===============================
       if (!isTable) {
 
@@ -511,7 +523,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }
 
       // ===============================
-      // CASE 2: Show Grid Table
+      // CASE 2 → Show Grid
       // ===============================
       if (!Array.isArray(data.tableData) || data.tableData.length === 0) {
         if (emptyEl) emptyEl.style.display = "block";
@@ -520,16 +532,19 @@ document.addEventListener("DOMContentLoaded", () => {
 
       container.style.display = "grid";
 
-      data.tableData.forEach(item => {
+      data.tableData.forEach(function (item) {
 
         if (!item || !item.name) return;
 
+        // Create Card
         const card = document.createElement("div");
         card.className = "centre-card";
 
+        // Title
         const title = document.createElement("h3");
-        title.textContent = `Centre d'examen ${item.name}`;
+        title.textContent = "Centre d'examen " + item.name;
 
+        // Link
         const button = document.createElement("a");
 
         if (item.link && typeof item.link === "string") {
@@ -547,11 +562,10 @@ document.addEventListener("DOMContentLoaded", () => {
         card.appendChild(title);
         card.appendChild(button);
         container.appendChild(card);
-
       });
 
     })
-    .catch(error => {
+    .catch(function (error) {
       console.error("Erreur API:", error);
       if (loadingEl) loadingEl.style.display = "none";
       if (emptyEl) emptyEl.style.display = "block";
