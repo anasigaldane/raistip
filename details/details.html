@@ -439,69 +439,126 @@ h1{
     </div>
 </div>
 <script>
-const params = new URLSearchParams(window.location.search);
-const id = params.get("iddata");
+document.addEventListener("DOMContentLoaded", () => {
 
-const link = document.getElementById("downloadLink");
-const container = document.getElementById("centresContainer");
-const loading = document.getElementById("loading");
-const emptyState = document.getElementById("emptyState");
+  const params = new URLSearchParams(window.location.search);
+  const id = params.get("iddata");
 
-fetch(`/api/data?id=${id}`)
-  .then(res => res.json())
-  .then(response => {
+  const titleEl = document.getElementById("title");
+  const descEl = document.getElementById("description");
+  const dateEl = document.getElementById("date");
+  const linkEl = document.getElementById("downloadLink");
+  const container = document.getElementById("centresContainer");
 
-    loading.style.display = "none";
+  // Optional elements (if you added them)
+  const loadingEl = document.getElementById("loading");
+  const emptyEl = document.getElementById("emptyState");
 
-    if (!response.success) {
-      emptyState.style.display = "block";
-      return;
-    }
+  // Safety check
+  if (!id) {
+    titleEl.textContent = "Introuvable";
+    return;
+  }
 
-    const data = response.data;
-    const isTable = String(data.tabl) === "true" || data.tabl === true;
+  // Reset UI
+  container.innerHTML = "";
+  container.style.display = "none";
+  linkEl.style.display = "none";
+  if (emptyEl) emptyEl.style.display = "none";
+  if (loadingEl) loadingEl.style.display = "block";
 
-    // 🔵 Show Download Button
-    if (!isTable) {
-      link.style.display = "inline-block";
-      link.href = data.lien || "#";
-      link.innerText = "📄 Télécharger l'avis (PDF)";
-      return;
-    }
+  fetch(`/api/data?id=${encodeURIComponent(id)}`)
+    .then(res => {
+      if (!res.ok) throw new Error("Network error");
+      return res.json();
+    })
+    .then(response => {
 
-    // 🟢 Show Grid
-    container.style.display = "grid";
+      if (loadingEl) loadingEl.style.display = "none";
 
-    if (!Array.isArray(data.tableData) || data.tableData.length === 0) {
-      emptyState.style.display = "block";
-      return;
-    }
+      if (!response.success || !response.data) {
+        titleEl.textContent = "Introuvable";
+        if (emptyEl) emptyEl.style.display = "block";
+        return;
+      }
 
-    data.tableData.forEach(item => {
+      const data = response.data;
 
-      const card = document.createElement("div");
-      card.className = "centre-card";
+      // Basic info
+      titleEl.textContent = data.titre || "-";
+      descEl.textContent = data.description || "-";
+      dateEl.textContent = data.date || "--/--/----";
 
-      const title = document.createElement("h3");
-      title.textContent = `Centre d'examen ${item.name}`;
+      // Safe Boolean conversion
+      const isTable = data.tabl === true || String(data.tabl).toLowerCase() === "true";
 
-      const button = document.createElement("a");
-      button.href = item.link || "#";
-      button.target = "_blank";
-      button.className = "btn-download";
-      button.textContent = "Télécharger PDF";
+      // ===============================
+      // CASE 1: Show Download Button
+      // ===============================
+      if (!isTable) {
 
-      card.appendChild(title);
-      card.appendChild(button);
+        if (data.lien && typeof data.lien === "string") {
+          linkEl.href = data.lien;
+          linkEl.textContent = "Télécharger l'avis (PDF)";
+          linkEl.target = "_blank";
+          linkEl.rel = "noopener noreferrer";
+          linkEl.style.display = "inline-block";
+        } else {
+          if (emptyEl) emptyEl.style.display = "block";
+        }
 
-      container.appendChild(card);
+        return;
+      }
+
+      // ===============================
+      // CASE 2: Show Grid Table
+      // ===============================
+      if (!Array.isArray(data.tableData) || data.tableData.length === 0) {
+        if (emptyEl) emptyEl.style.display = "block";
+        return;
+      }
+
+      container.style.display = "grid";
+
+      data.tableData.forEach(item => {
+
+        if (!item || !item.name) return;
+
+        const card = document.createElement("div");
+        card.className = "centre-card";
+
+        const title = document.createElement("h3");
+        title.textContent = `Centre d'examen ${item.name}`;
+
+        const button = document.createElement("a");
+
+        if (item.link && typeof item.link === "string") {
+          button.href = item.link;
+          button.target = "_blank";
+          button.rel = "noopener noreferrer";
+          button.textContent = "Télécharger PDF";
+        } else {
+          button.href = "#";
+          button.textContent = "Lien indisponible";
+          button.style.opacity = "0.6";
+          button.style.pointerEvents = "none";
+        }
+
+        card.appendChild(title);
+        card.appendChild(button);
+        container.appendChild(card);
+
+      });
+
+    })
+    .catch(error => {
+      console.error("Erreur API:", error);
+      if (loadingEl) loadingEl.style.display = "none";
+      if (emptyEl) emptyEl.style.display = "block";
+      titleEl.textContent = "Erreur de chargement";
     });
 
-  })
-  .catch(() => {
-    loading.style.display = "none";
-    emptyState.style.display = "block";
-  });
+});
 </script>
 </body>
 </html>
