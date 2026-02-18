@@ -546,7 +546,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         // Link
         const button = document.createElement("a");
-
+        button.className = "btn-download";
         if (item.link && typeof item.link === "string") {
           button.href = item.link;
           button.target = "_blank";
