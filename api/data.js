@@ -77,8 +77,8 @@ export default function handler(req, res) {
           { "name": "SETTAT", "link": "/docs/TA Settat25.pdf" },
           { "name": "TANGER", "link": "/docs/TA_Tanger 25.pdf" },
           { "name": "TAZA", "link": "/docs/TA_Taza 25.pdf" },
-          { "name": "TETOUAN", "link": "/docs/TETOUAN TA.pdf" },
-          { "name": "TIZNIT​", "link": "/docs/TA_Tetouan 25.pdf" },
+          { "name": "TETOUAN", "link": "/docs/TA_Tetouan 25.pdf" },
+          { "name": "TIZNIT​", "link": "/docs/TA_Tiznit 25.pdf" },
           { "name": "OUARZAZATE", "link": "/docs/TA_Ouarzazate 25.pdf" },
           { "name": "​ZAG​ORA", "link": "/docs/TA Zagora25.pdf" }
         ]
