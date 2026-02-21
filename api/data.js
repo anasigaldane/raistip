@@ -235,7 +235,7 @@ export default function handler(req, res) {
         titre: "Répartition des candidats convoqués pour passer l'épreuve orale du concours d'accès aux ISPITS, cycle du master, session de 17 novembre 2024",
         description: "Détails sur la répartition des candidats pour l'épreuve orale du concours master.",
         lien: "https://ispits.sante.gov.ma/Documents/MASTER2024/R%C3%A9partition%20des%20candidats%20convoqu%C3%A9s%20Oral.pdf",
-        tabl: true
+        tabl: false
       }
     ]
   };
