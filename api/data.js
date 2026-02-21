@@ -126,8 +126,31 @@ export default function handler(req, res) {
         lien: "https://ispits.sante.gov.ma/Pages/DetailActualites.aspx?IDActu=156",
         tabl: true,
         tableData: [
-          { "name": "Agadir", "link": "/docs/agadir.pdf" },
-          { "name": "Fès", "link": "/docs/fes.pdf" }
+          { "name": "Centre d'examen AGADIR", "link": "/docs/Agadir 2025.pdf" },
+          { "name": "Centre d'examen ALHOCEIMA", "link": "/docs/Al hoceima 2025.pdf" },
+          { "name": "Centre d'examen B ENI MELLAL", "link": "/docs/Beni mellal 2025.pdf" },
+          { "name": "Centre d'examen CASABLANCA", "link": "/docs/Casablanca 2025.pdf" },
+          { "name": "Centre d'examen DAKHLA", "link": "/docs/Dakhla 2025.pdf" },
+          { "name": "Centre d'examen ERRACHIDIA", "link": "/docs/Errachidia 2025.pdf" },
+          { "name": "Centre d'examen ESSAOUIRA", "link": "/docs/Essaouira 2025.pdf" },
+          { "name": "Centre d'examen FES", "link": "/docs/Fès 2025.pdf" },
+          { "name": "Centre d'examen GUELMIM", "link": "/docs/Guelmim 2025.pdf" },
+          { "name": "Centre d'examen KENITRA", "link": "/docs/Kenitra 2025.pdf" },
+          { "name": "Centre d'examen KHENIFRA", "link": "/docs/Khenifra 2025.pdf" },
+          { "name": "Centre d'examen LAAYOUNE", "link": "/docs/Laayoune 2025.pdf" },
+          { "name": "Centre d'examen MARRAKECH", "link": "/docs/Marrakech 2025.pdf" },
+          { "name": "Centre d'examen MEKNES", "link": "/docs/Meknes 2025.pdf" },
+          { "name": "Centre d'examen NADOR", "link": "/docs/Nador 2025.pdf" },
+          { "name": "Centre d'examen OUJDA", "link": "/docs/Oujda 2025.pdf" },
+          { "name": "Centre d'examen RABAT", "link": "/docs/Rabat 2025.pdf" },
+          { "name": "Centre d'examen SAFI", "link": "/docs/Safi 2025.pdf" },
+          { "name": "Centre d'examen SETTAT", "link": "/docs/Settat 2025.pdf" },
+          { "name": "Centre d'examen TANGER", "link": "/docs/Tanger 2025.pdf" },
+          { "name": "Centre d'examen TAZA", "link": "/docs/Taza 2025.pdf" },
+          { "name": "Centre d'examen TETOUAN", "link": "/docs/Tetouan 2025.pdf" },
+          { "name": "Centre d'examen TIZNIT", "link": "/docs/Tiznit 2025.pdf" },
+          { "name": "Centre d'examen OUARZAZATE", "link": "/docs/Ouarzazate 2025.pdf" },
+          { "name": "Centre d'examen ZAGORA", "link": "/docs/Zagora 2025.pdf" }
         ]
       },
       {
@@ -138,8 +161,31 @@ export default function handler(req, res) {
         lien: "https://ispits.sante.gov.ma/Pages/DetailActualites.aspx?IDActu=155",
         tabl: true,
         tableData: [
-          { "name": "Agadir", "link": "/docs/agadir.pdf" },
-          { "name": "Fès", "link": "/docs/fes.pdf" }
+          { "name": "Centre d'examen AGADIR", "link": "/docs/Agadir_liste_candidats_convoqués_ISPITS2025.pdf" },
+          { "name": "Centre d'examen ALHOCEIMA", "link": "/docs/Al Hoceima_liste_candidats_convoqués_ISPITS2025.pdf" },
+          { "name": "Centre d'examen B ENI MELLAL", "link": "/docs/Beni Mellal_liste_candidats_convoqués_ISPITS2025.pdf" },
+          { "name": "Centre d'examen CASABLANCA", "link": "/docs/Casablanca_liste_candidats_convoqués_ISPITS2025.pdf" },
+          { "name": "Centre d'examen DAKHLA", "link": "/docs/Dakhla_liste_candidats_convoqués_ISPITS2025.pdf" },
+          { "name": "Centre d'examen ERRACHIDIA", "link": "/docs/Errachidia_liste_candidats_convoqués_ISPITS2025.pdf" },
+          { "name": "Centre d'examen ESSAOUIRA", "link": "/docs/Essaouira_liste_candidats_convoqués_ISPITS2025.pdf" },
+          { "name": "Centre d'examen FES", "link": "/docs/Fès_liste_candidats_convoqués_ISPITS2025.pdf" },
+          { "name": "Centre d'examen GUELMIM", "link": "/docs/Guelmim_liste_candidats_convoqués_ISPITS2025.pdf" },
+          { "name": "Centre d'examen KENITRA", "link": "/docs/Kenitra_liste_candidats_convoqués_ISPITS2025.pdf" },
+          { "name": "Centre d'examen KHENIFRA", "link": "/docs/Khénifra_liste_candidats_convoqués_ISPITS2025.pdf" },
+          { "name": "Centre d'examen LAAYOUNE", "link": "/docs/Laâyoune_liste_candidats_convoqués_ISPITS2025.pdf" },
+          { "name": "Centre d'examen MARRAKECH", "link": "/docs/Marrakech_liste_candidats_convoqués_ISPITS2025.pdf" },
+          { "name": "Centre d'examen MEKNES", "link": "/docs/Meknès_liste_candidats_convoqués_ISPITS2025.pdf" },
+          { "name": "Centre d'examen NADOR", "link": "/docs/Nador_liste_candidats_convoqués_ISPITS2025.pdf" },
+          { "name": "Centre d'examen OUJDA", "link": "/docs/Oujda_liste_candidats_convoqués_ISPITS2025.pdf" },
+          { "name": "Centre d'examen RABAT", "link": "/docs/Rabat_liste_candidats_convoqués_ISPITS2025.pdf" },
+          { "name": "Centre d'examen SAFI", "link": "/docs/Safi_liste_candidats_convoqués_ISPITS2025.pdf" },
+          { "name": "Centre d'examen SETTAT", "link": "/docs/Settat_liste_candidats_convoqués_ISPITS2025.pdf" },
+          { "name": "Centre d'examen TANGER", "link": "/docs/Tanger_liste_candidats_convoqués_ISPITS2025.pdf" },
+          { "name": "Centre d'examen TAZA", "link": "/docs/Taza_liste_candidats_convoqués_ISPITS2025.pdf" },
+          { "name": "Centre d'examen TETOUAN", "link": "/docs/Tétouan_liste_candidats_convoqués_ISPITS2025.pdf" },
+          { "name": "Centre d'examen TIZNIT", "link": "/docs/Tiznit_liste_candidats_convoqués_ISPITS2025.pdf" },
+          { "name": "Centre d'examen OUARZAZATE", "link": "/docs/Ouarzazate_liste_candidats_convoqués_ISPITS2025.pdf" },
+          { "name": "Centre d'examen ZAGORA", "link": "/docs/Zagora_liste_candidats_convoqués_ISPITS2025.pdf" }
         ]
       },
       {
@@ -166,8 +212,21 @@ export default function handler(req, res) {
         lien: "https://ispits.sante.gov.ma/Pages/DetailActualites.aspx?IDActu=152",
         tabl: true,
         tableData: [
-          { "name": "Agadir", "link": "/docs/agadir.pdf" },
-          { "name": "Fès", "link": "/docs/fes.pdf" }
+          { "name": "AGADIR", "link": "/docs/Agadir RD.pdf" },
+          { "name": "B ENI MELLAL", "link": "/docs/Benimellal RD.pdf" },
+          { "name": "CASABLANCA", "link": "/docs/CASABLANCA RD.pdf" },
+          { "name": "ERRACHIDIA", "link": "/docs/ERRACHIDIA RD.pdf" },
+          { "name": "​FES", "link": "/docs/FES RD.pdf" },
+          { "name": "GUELMIM", "link": "/docs/GUELMIM RD.pdf" },
+          { "name": "KENITRA", "link": "/docs/KENITRA RD.pdf" },
+          { "name": "LAAYOUNE", "link": "/docs/LAAYOUNE RD.pdf" },
+          { "name": "MARRAKECH", "link": "/docs/MARRAKECH RD.pdf" },
+          { "name": "MEKNES", "link": "/docs/MEKNES RD.pdf" },
+          { "name": "OUJDA", "link": "/docs/OUJDA RD.pdf" },
+          { "name": "RABAT", "link": "/docs/RABAT RD.pdf" },
+          { "name": "TANGER", "link": "/docs/TANGER RD.pdf" },
+          { "name": "TETOUAN", "link": "/docs/TETOUAN RD.pdf" },
+          
         ]
       },
       {
@@ -176,11 +235,7 @@ export default function handler(req, res) {
         titre: "Répartition des candidats convoqués pour passer l'épreuve orale du concours d'accès aux ISPITS, cycle du master, session de 17 novembre 2024",
         description: "Détails sur la répartition des candidats pour l'épreuve orale du concours master.",
         lien: "https://ispits.sante.gov.ma/Documents/MASTER2024/R%C3%A9partition%20des%20candidats%20convoqu%C3%A9s%20Oral.pdf",
-        tabl: true,
-        tableData: [
-          { "name": "Agadir", "link": "/docs/agadir.pdf" },
-          { "name": "Fès", "link": "/docs/fes.pdf" }
-        ]
+        tabl: true
       }
     ]
   };

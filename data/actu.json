@@ -15,11 +15,7 @@
       "titre": "Proclamation des résultats du test d'aptitude du concours d'accès aux ISPITS, cycle de la licence, session septembre 2025",
       "description": "Résultats du test d'aptitude pour le concours d'accès aux ISPITS, cycle licence, session septembre 2025.",
       "lien": "https://raistip-1u24.vercel.app/details/details.html?iddata=156",
-      "tabl": true,
-      "tableData": [
-        { "name": "Agadir", "link": "/docs/agadir.pdf" },
-        { "name": "Fès", "link": "/docs/fes.pdf" }
-      ]
+      "tabl": true
     },
     {
       "id": "155",
@@ -27,11 +23,7 @@
       "titre": "Planning du déroulement du test d'aptitude des candidats admis à l'épreuve écrite du concours d'accès aux ISPITS, cycle licence, session septembre 2025",
       "description": "Calendrier détaillé du déroulement du test d'aptitude pour les candidats admis.",
       "lien": "https://raistip-1u24.vercel.app/details/details.html?iddata=155",
-      "tabl": true,
-      "tableData": [
-        { "name": "Agadir", "link": "/docs/agadir.pdf" },
-        { "name": "Fès", "link": "/docs/fes.pdf" }
-      ]
+      "tabl": true
     },
     {
       "id": "154",
@@ -39,11 +31,7 @@
       "titre": "Proclamation des résultats de l'épreuve écrite du concours d'accès aux ISPITS, cycle de la licence, session 2025",
       "description": "Résultats de l'épreuve écrite pour les candidats du cycle licence, session 2025.",
       "lien": "https://raistip-1u24.vercel.app/details/details.html?iddata=154",
-      "tabl": true ,
-      "tableData": [
-      { "name": "Agadir", "link": "/docs/agadir.pdf" },
-      { "name": "Fès", "link": "/docs/fes.pdf" }
-    ]
+      "tabl": true 
     },
     {
       "id": "153",
@@ -51,11 +39,7 @@
       "titre": "Listes définitives des candidats présélectionnés par ville d'examen pour passer l'épreuve écrite du concours d'accès aux ISPITS, cycle de la licence, session septembre 2025",
       "description": "Les listes définitives des candidats présélectionnés par ville d'examen.",
       "lien": "https://raistip-1u24.vercel.app/details/details.html?iddata=153",
-      "tabl": true ,
-       "tableData": [
-      { "name": "Agadir", "link": "/docs/agadir.pdf" },
-      { "name": "Fès", "link": "/docs/fes.pdf" }
-    ]
+      "tabl": true 
     },
     {
       "id": "152",
@@ -63,11 +47,7 @@
       "titre": "Listes des candidats présélectionnés par ville d'examen pour passer l'épreuve écrite du concours d'accès aux ISPITS, cycle de la licence, session septembre 2025",
       "description": "Listes initiales des candidats présélectionnés par ville d'examen.",
       "lien": "https://raistip-1u24.vercel.app/details/details.html?iddata=152",
-      "tabl": true ,
-       "tableData": [
-      { "name": "Agadir", "link": "/docs/agadir.pdf" },
-      { "name": "Fès", "link": "/docs/fes.pdf" }
-    ]
+      "tabl": true 
     },
     {
       "id": "151",
@@ -91,11 +71,7 @@
       "titre": "Résultats définitifs du concours d'accès aux ISPITS, cycle du master, session du 17 novembre 2024",
       "description": "Résultats finaux du concours pour le cycle master, session du 17 novembre 2024.",
       "lien": "https://raistip-1u24.vercel.app/details/details.html?iddata=149",
-      "tabl": true ,
-       "tableData": [
-      { "name": "Agadir", "link": "/docs/agadir.pdf" },
-      { "name": "Fès", "link": "/docs/fes.pdf" }
-    ]
+      "tabl": true 
     },
     {
       "id": "148",
@@ -103,11 +79,7 @@
       "titre": "Répartition des candidats convoqués pour passer l'épreuve orale du concours d'accès aux ISPITS, cycle du master, session de 17 novembre 2024",
       "description": "Détails sur la répartition des candidats pour l'épreuve orale du concours master.",
       "lien": "https://raistip-1u24.vercel.app/details/details.html?iddata=148",
-      "tabl": true ,
-       "tableData": [
-      { "name": "Agadir", "link": "/docs/agadir.pdf" },
-      { "name": "Fès", "link": "/docs/fes.pdf" }
-    ]
+      "tabl": true 
     }
   ]
 }
